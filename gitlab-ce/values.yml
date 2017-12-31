@@ -1,0 +1,51 @@
+image: gitlab/gitlab-ce:latest
+#imagePullPolicy:
+externalUrl: http://192.168.40.43/
+gitlabRootPassword: "pass1234"
+serviceType: LoadBalancer
+ingress:
+  annotations:
+  enabled: false
+  tls:
+  url: gitlab.cluster.local
+sshPort: 22
+httpPort: 80
+httpsPort: 443
+livenessPort: http
+readinessPort: http
+resources:
+  requests:
+    memory: 1Gi
+    cpu: 500m
+  limits:
+    memory: 2Gi
+    cpu: 1
+persistence:
+  gitlabEtc:
+    enabled: true
+    size: 1Gi
+    storageClass: gitlab-gluster
+    accessMode: ReadWriteOnce
+  gitlabData:
+    enabled: true
+    size: 1Gi
+    storageClass: gitlab-gluster
+    accessMode: ReadWriteOnce
+postgresql:
+  imageTag: "9.6"
+  cpu: 1000m
+  memory: 1Gi
+  postgresUser: gitlab
+  postgresPassword: gitlab
+  postgresDatabase: gitlab
+  persistence:
+    size: 1Gi
+    storageClass: gitlab-gluster
+redis:
+  redisPassword: "gitlab"
+  resources:
+    requests:
+      memory: 1Gi
+  persistence:
+    size: 1Gi
+    storageClass: gitlab-gluster

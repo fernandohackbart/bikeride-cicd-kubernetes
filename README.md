@@ -10,6 +10,7 @@ https://github.com/kubernetes/charts/tree/master/stable/jenkins
 helm install --name loadbalancer -f loadbalancer/loadbalancer-values.yml stable/nginx-ingress
 ```
 
+To revert the installation:
 ```
 helm del --purge loadbalancer
 ```

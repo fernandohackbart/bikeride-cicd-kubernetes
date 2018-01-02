@@ -1,8 +1,9 @@
-image: gitlab/gitlab-ce:latest
+#image: gitlab/gitlab-ce:latest
+image: gitlab/gitlab-ce:9.4.1-ce.0
 #imagePullPolicy:
 externalUrl: http://192.168.40.43/
 gitlabRootPassword: "pass1234"
-serviceType: LoadBalancer
+serviceType: NodePort
 ingress:
   annotations:
   enabled: false

@@ -1,0 +1,14 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: karthequian/helloworld
+      ports:
+        - name: "http-server"
+          containerPort: 80

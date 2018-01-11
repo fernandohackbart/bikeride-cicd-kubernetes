@@ -2,7 +2,7 @@
 image: gitlab/gitlab-ce:9.4.1-ce.0
 #imagePullPolicy:
 externalUrl: http://192.168.40.43/
-gitlabRootPassword: "pass1234"
+gitlabRootPassword: "Welcome1"
 serviceType: NodePort
 ingress:
   annotations:
@@ -25,12 +25,12 @@ persistence:
   gitlabEtc:
     enabled: true
     size: 1Gi
-    storageClass: gitlab-gluster
+    storageClass: local-gluster
     accessMode: ReadWriteOnce
   gitlabData:
     enabled: true
     size: 1Gi
-    storageClass: gitlab-gluster
+    storageClass: local-gluster
     accessMode: ReadWriteOnce
 postgresql:
   imageTag: "9.6"
@@ -41,7 +41,7 @@ postgresql:
   postgresDatabase: gitlab
   persistence:
     size: 1Gi
-    storageClass: gitlab-gluster
+    storageClass: local-gluster
 redis:
   redisPassword: "gitlab"
   resources:
@@ -49,4 +49,4 @@ redis:
       memory: 1Gi
   persistence:
     size: 1Gi
-    storageClass: gitlab-gluster
+    storageClass: local-gluster

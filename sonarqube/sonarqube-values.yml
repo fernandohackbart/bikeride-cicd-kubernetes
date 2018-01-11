@@ -54,7 +54,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "sonarqube-gluster"
+  storageClass: "local-gluster"
   accessMode: ReadWriteOnce
   size: 2Gi
 
@@ -75,7 +75,7 @@ postgresql:
   postgresPassword: "sonarPass"
   persistence:
     enabled: true
-    storageClass: "sonarqube-gluster"
+    storageClass: "local-gluster"
     accessMode: ReadWriteOnce
     size: 2Gi
 postgresDatabase: "sonarDB"

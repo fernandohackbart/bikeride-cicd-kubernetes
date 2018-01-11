@@ -38,7 +38,7 @@ persistence:
   accessMode: 'ReadWriteOnce'
   enabled: true
   size: 10Gi
-  storageClass: 'docker-registry-gluster'
+  storageClass: 'local-gluster'
 
 # set the type of filesystem to use
 storage: filesystem

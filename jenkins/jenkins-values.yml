@@ -7,7 +7,7 @@ Master:
   Component: "jenkins-master"
   UseSecurity: true
   AdminUser: admin
-  # AdminPassword: <defaults to random>
+  AdminPassword: Welcome1
   Cpu: "200m"
   Memory: "256Mi"
   # Set min/max heap here if needed with:
@@ -44,6 +44,7 @@ Master:
     - workflow-job:2.15
     - credentials-binding:1.13
     - git:3.6.4
+    - sbt:1.5
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   # ScriptApproval:
   #   - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
@@ -106,7 +107,7 @@ Persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  StorageClass: "jenkins-gluster"
+  StorageClass: "local-gluster"
 
   Annotations: {}
   AccessMode: ReadWriteOnce
@@ -133,4 +134,4 @@ rbac:
   # RBAC api version (currently either v1beta1 or v1alpha1)
   apiVersion: v1beta1
   # Cluster role reference
-roleRef: cluster-admin 
+  roleRef: cluster-admin 

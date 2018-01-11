@@ -42,7 +42,7 @@ database:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "artifactory-gluster"
+    storageClass: "local-gluster"
   resources: {}
   #  requests:
   #    memory: "512Mi"
@@ -80,7 +80,7 @@ artifactory:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "artifactory-gluster"
+    storageClass: "local-gluster"
   ## Uncomment the following resources definitions or pass them from command line
   ## to control the cpu and memory resources allocated by the Kubernetes cluster
   resources: {}
@@ -137,7 +137,7 @@ nginx:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "artifactory-gluster"
+    storageClass: "local-gluster"
   resources: {}
   #  requests:
   #    memory: "250Mi"

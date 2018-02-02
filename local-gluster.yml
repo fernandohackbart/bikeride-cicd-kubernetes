@@ -5,8 +5,7 @@ metadata:
   name: local-gluster
 provisioner: kubernetes.io/glusterfs
 parameters:
-  #resturl: "http://heketi-cluster.default.svc.cluster.local:8080"
-  resturl: "http://10.110.90.248:8080"
+  resturl: "http://10.102.50.61:8080"
   restauthenabled: "true"
   restuser: "admin"
   restuserkey: "Welcome1"
